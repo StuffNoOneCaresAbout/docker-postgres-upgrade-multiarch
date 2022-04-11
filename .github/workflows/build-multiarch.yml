@@ -8,7 +8,7 @@ jobs:
     build-directories:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2.4.0
+            - uses: actions/checkout@v3.0.0
               with:
                   repository: "tianon/docker-postgres-upgrade"
             - id: set-matrix
@@ -23,7 +23,7 @@ jobs:
             matrix:
                 tag: ${{fromJson(needs.build-directories.outputs.matrix)}}
         steps:
-            - uses: actions/checkout@v2.4.0
+            - uses: actions/checkout@v3.0.0
               with:
                   repository: "tianon/docker-postgres-upgrade"
             - name: Set up QEMU
